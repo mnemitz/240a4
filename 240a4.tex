@@ -1,6 +1,7 @@
 \documentclass{article} 
 
 \usepackage{amsmath,amsthm,amssymb}
+\usepackage[margin=0.70in]{geometry}
 
 \newtheorem{problem}{Problem} 
 
@@ -26,25 +27,22 @@ Solve for x in the congruence:
 
 \begin{solution}
 First we observe that 32 and 13 are coprime since \[gcd(32,13)=1\] This means there is exactly one congruence class for x which satisfies this equation, and in order to find the base value for this congruence class, we need to find the multiplicative inverse of 32 under mod 13. In other words, we are looking for $v$ such that: \[32v \equiv 1 \quad (mod 13)\] Since then we know,\[x \equiv 8v \quad(mod 13)\] In other words we want: \[32v + 13k = 1\] ...for some $k$.
-To find this we perform the extended Euclidean algorithm on 32 and 13:
+To find this we can perform the extended Euclidean algorithm on 32 and 13:
 \[32=2(13) + 6\]\[13=2(6)+1\]\[so...\]\[6=32-2(13)\]\[1=13-2(6)\]\[1=13-2(32-2(13))\]\[1=13-2(32)+4(13)\]\[1=-2(32)+5(13)\]\[v=-2 \quad , \quad k=5\]
-We have shown that -2 is a multiplicative inverse (mod 13) of 32. So we have \[x = -2(8) = -16\]
+We have shown that -2 is the multiplicative inverse (mod 13) of 32. So we have \[x = -2(8) = -16\]
 \end{solution}
 \begin{problem}
 How many solutions does the following congruence have?
 \[51x \equiv 34 \quad (mod 646)\]
 \end{problem}
 \begin{solution}
-We start by finding a single solution to the equation using the same method as in Problem 1. We perform the extended Euclidean algorithm on 51 and 646:
-\[646=12(51) + 34\]\[51 = 34 + 17\]\[34 = 2(17)\]\[gcd(646,51) = 17\]
-Giving us by extension: TODO FINISH!
-\[\]
+...
 \end{solution}
 \begin{problem}
 	What is the last digit of 393 to the power of 4097?
 \end{problem}
 \begin{solution}
-Start with the following observation:\[\forall a\quad a \equiv b \quad (mod 10)\] ...where $b$ is the last digit of $a$. Based on this observation, with 393 as our base, observe that only the last digit $3$ can have any affect on the last digit of any greater power of 393, since 393 is congruent to 3 mod 10, or more intuitively, all greater powers of 90 and 300 end in zero(es). Therefore, the last digit of $393^{4097}$ is the same as the last digit of $3^{4097}$. We can then exploit the pattern of powers of 3 in mod 10:
+Start with the following observation:\[\forall a\quad a \equiv b \quad (mod 10)\] ...where $b$ is the last digit of $a$. Based on this observation, with 393 as our base, only the last digit $3$ can have any effect on the last digit of any greater power of 393, since 393 is congruent to 3 mod 10, or more intuitively, all greater powers of 90 and 300 end in zero(es). Therefore, the last digit of $393^{4097}$ is the same as the last digit of $3^{4097}$. We can then exploit the pattern of last digits of powers of 3 in mod 10:
 \begin{center}
 	\begin{tabular}{c c}
 		$3^0$ & \textbf{1} \\
@@ -60,5 +58,23 @@ Start with the following observation:\[\forall a\quad a \equiv b \quad (mod 10)\
 From this pattern, we can see that $3^{4k}$ will always end in 1. We can also infer that for any $3^n$, the last digit will be the same as that of z$3^{(n\%4)}$. Since $4096\%4 = 1$, the last digit of $3^{4097}$ must be the same as that of $3^1$, which is 3. The last digit of $393^{4097}$ is therefore also \textbf{3}
 \end{solution}
 \begin{problem}
+Give an example of two functions $f$ and $g$ such that $g \circ f(x) = x$ for all $x$ but $f \circ g(y) \not= y$ for some $y$.
+\end{problem}
+\begin{solution}
+	Take for example $f(x) = \sqrt{x}$ and $g(y) = y^2$. It is true that $\forall x (\sqrt{x})^2 = x$ (even if $x$ is negative, and $\sqrt{x}$ is a complex number this still holds). However, $\exists y \sqrt{y^2} \not= y$, namely negative values of $y$, since $\sqrt{(-y)^2} = y \not= -y$. 
+\end{solution}
+\begin{problem}
+	\renewcommand{\theenumi}{\alph{enumi}}
+%	\[\]
+	\begin{enumerate}
+		\item How many injections are there from the set $A = \{1,2,3,4\}$ to the set $B = \{1,2,3,4,5\}$?
+		\item How many surjections are there from $A$ to $B$?
+	\end{enumerate}
+	\begin{solution}
+		\[\]
+		\begin{enumerate}
+			\item content...
+		\end{enumerate}
+	\end{solution}
 \end{problem}
 \end{document}
